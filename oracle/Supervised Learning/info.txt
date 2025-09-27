@@ -1,0 +1,87 @@
+Supervised Learning: A type of machine learning where an algorithm is trained on a labeled dataset.
+In the training dataset, each example includes input data along with the correct output (labeled).
+Its goal is to learn the mapping between inputs and outputs so that it can accurately predict the output for new, unseen data.
+
+1. Training Set
+
+What it is: The portion of the data used to teach the model the relationship between inputs (features) and outputs (labels).
+
+Purpose: The model “learns” patterns, weights, or decision rules from this data.
+
+Example: If building a spam filter, the training set contains many emails with labels “spam” or “not spam.”
+
+2. Testing Set
+
+What it is: A separate portion of the data not used during training.
+
+Purpose: To evaluate how well the model generalizes to unseen data.
+
+Why: If we only check accuracy on training data, the model might look good but actually fail on new data (overfitting).
+
+3. (Optional) Validation Set
+
+Sometimes, data is split into training + validation + testing:
+
+Training set: learns the model.
+
+Validation set: tunes hyperparameters (like learning rate, number of layers).
+
+Testing set: final unbiased evaluation.
+
+Typical Splits
+
+70% training, 30% testing
+
+Or 60% training, 20% validation, 20% testing
+
+The exact ratio depends on dataset size (larger datasets can afford smaller test sets).
+
+** Types
+1. Classification: predicting a discrete label or category for each input.
+ex: spam email detection, image recognition.
+
+2. Regression: predicting a continuous value
+ex: price prediction, sales forecast.
+
+** Algorithms
+1. Linear Regression
+2. Logistic Regression
+3. Decision tree / Random Forest
+4. SVMs
+5. Neural Networks.
+
+** Linear Regression: y = b0 + b1 * x
+- y = target
+- x = single feature (independent variable)
+- b0 = y-intercept
+- b1 = slope of the line
+
+- slope: represents how steep the line is (rate of change). If the slope is 1.5, that means for every unit increase in x, y increased by 1.5 units.
+- intercept: the point where the line crosses the y-axis (when  x = 0).
+- Loss function: quantifies the difference between the predicted output of a model and the actual target values, representing the error in model's     predictions.
+
+- MSE: this loss function calculates the square of the difference between predicted and actual values, averaged over all data points.
+
+** Classification
+The goal is to predict the category or class of a given data point based on its features. 
+Classification predicts a discrete label (spam vs not spam) (cat vs dog)
+
+- Binary classification: It has two classes
+- Multiclass Classification: It has more than two classes. "Classifying handwritten digits"
+- Multilabel Classification: It has multiple labels per instance. It can belong to more than one class. (A movie which can be in multiple genres.)
+
+Logistic regression: It predicts the probability that a given input belongs to a particular class. 
+
+Linear Combination (Logit): It is the first step in logistic regression, where we compute a weighted sum or logit of the input features, plus an intercept (bias term)
+
+Z = (slope * X) + intercept.
+    - Slope represents the coefficient(s) learned during training for each feature in X
+    - Intercept (or bias term) is also learned during training and shifts the curve
+
+Sigmoid Function: It is applied to the logit z to map predictions to a probability between 0 and 1.
+
+Decision Boundary: if >= 0.5: positive class
+                   if < 0.5: negative class.
+
+Log-Loss (Cross-Entropy loss):Measures the error between the predicted probabilities and the actual class labels.
+
